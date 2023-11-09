@@ -27,6 +27,14 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('hidden');
 });
 
+//Outside Burger
+
+window.addEventListener('click', (e) =>{
+    if(e.target != hamburger && e.tagret != navMenu){
+        hamburger.classList.remove('hamburger-active');
+        navMenu.classList.add('hidden');
+    }
+});
 
 const html = document.querySelector('html');
 const darkToggle = document.querySelector('.dark-toggle');
@@ -34,6 +42,8 @@ const darkToggle = document.querySelector('.dark-toggle');
 darkToggle.addEventListener('click', () =>{
     darkToggle.checked ? html.classList.add('dark') : html.classList.remove('dark');
 });
+
+
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     darkToggle.checked = true;
