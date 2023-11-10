@@ -4,6 +4,7 @@ window.onscroll = function(){
     const toTop = document.querySelector('.to-top');
     const fixedNav = header.offsetTop;
 
+
     if(window.scrollY > fixedNav ) {
         header.classList.add("navbar-fixed");
         header.classList.remove('absolute');

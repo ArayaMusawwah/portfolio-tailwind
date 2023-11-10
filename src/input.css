@@ -21,6 +21,7 @@
         @apply w-[30px] h-[2px] bg-black dark:bg-secondary block my-2 rounded-full transition-all duration-300 ease-in-out;
     }
 
+
     .dark-toggle:checked ~ label div.circle{
         @apply translate-x-5
     }
