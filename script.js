@@ -1,3 +1,5 @@
+emailjs.init('BWh0Z-N0vVjDKJnOa')
+
 window.onscroll = function(){
     const header = document.querySelector('header');
     const absolute = document.getElementsByClassName('absolute');
@@ -45,9 +47,26 @@ darkToggle.addEventListener('click', () =>{
 });
 
 
-
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     darkToggle.checked = true;
   } else {
     darkToggle.checked = false;
   }
+
+  /* For Contact Email */
+
+
+
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    emailjs.sendForm('service_nl3twmo', 'template_geflgd1', this)
+        .then((response) => {
+            console.log('Email berhasil dikirim!', response.status, response.text);
+        }).catch((error) => {
+            console.log('Email gagal dikirim.', error);
+        }).finally(() => {
+            form.reset();
+        });
+});
