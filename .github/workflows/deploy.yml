@@ -1,23 +1,25 @@
+# .github/workflows/deploy.yml
 name: Deploy ke VPS
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout kode
+    - name: Checkout Kode
       uses: actions/checkout@v3
 
-    - name: Deploy ke VPS via SSH
+    - name: SSH ke VPS dan Pull Repo
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_KEY }}
         script: |
-          cd ~/webserver/portfolio
+          cd /path/to/project
           git pull origin main
+          docker compose up -d --build
