@@ -57,7 +57,7 @@
     >
       <div class="container mx-auto">
         <div class="relative flex items-center justify-between">
-          <div class="flex items-center py-4 pl-4">
+          <div class="flex items-center py-4 pl-4 justify-center">
             <a href="#home"
               ><img
                 src="img/Arμ's  Logo 0.png"
@@ -71,7 +71,7 @@
             >
           </div>
           <div class="flex flex-wrap items-center px-5">
-            <button
+            <!-- <button
               id="hamburger"
               name="hamburger"
               type="button"
@@ -80,7 +80,17 @@
               <span class="burger origin-top-left"></span>
               <span class="burger"></span>
               <span class="burger origin-bottom-left"></span>
-            </button>
+            </button> -->
+
+            <div class="relative">
+              <div id="ketua-burger">
+                <span class="burger origin-top-left"></span>
+                <span class="burger"></span>
+                <span class="burger origin-bottom-left"></span>
+              </div>
+              <input role="button" type="checkbox" class="absolute w-10 h-10 top-0 toggle-burger opacity-0" id="hamburger">
+            </div>
+            </input>
             <nav
               id="nav-menu"
               class="lg:bg-w-full absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white shadow-xl dark:bg-tertiary dark:shadow-lg dark:shadow-white/40 lg:static lg:block lg:max-w-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent lg:dark:shadow-none"

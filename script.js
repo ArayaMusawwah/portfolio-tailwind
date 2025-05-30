@@ -23,9 +23,11 @@ window.onscroll = function(){
 
 
 const hamburger = document.getElementById("hamburger");
+const ketuaBurger = document.getElementById("ketua-burger");
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
+    ketuaBurger.classList.toggle('hamburger-active')
     hamburger.classList.toggle('hamburger-active');
     navMenu.classList.toggle('hidden');
 });
